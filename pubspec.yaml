@@ -1,0 +1,115 @@
+name: flux_convert
+description: "FluxConvert — A modern offline-first file converter application."
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: "^3.11.0"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Runtime Dependencies
+# ─────────────────────────────────────────────────────────────────────────────
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # ── State Management & Dependency Injection ──────────────────────────────
+  flutter_riverpod: ^2.6.1
+
+  # ── Navigation ────────────────────────────────────────────────────────────
+  go_router: ^15.1.2
+
+  # ── Immutable Models & Sealed Unions ─────────────────────────────────────
+  freezed_annotation: ^3.0.0
+  json_annotation: ^4.9.0
+
+  # ── Typography ────────────────────────────────────────────────────────────
+  # Uses system fonts (Roboto on Android) for 100% offline-first operation.
+  # No google_fonts dependency — prevents network font fetch errors at runtime.
+
+  # ── Value Equality ────────────────────────────────────────────────────────
+  equatable: ^2.0.5
+  uuid: ^4.5.1
+
+  # ── Logging (debug-only; release silenced) ────────────────────────────────
+  logger: ^2.5.0
+
+  # ── Local Storage ─────────────────────────────────────────────────────────
+  path_provider: ^2.1.5
+  shared_preferences: ^2.5.3
+  file_picker: ^8.1.7
+
+  # ── Permissions (Android 13+ aware) ──────────────────────────────────────
+  permission_handler: ^11.3.1
+
+  # ── File Type Detection ───────────────────────────────────────────────────
+  mime: ^2.0.0
+
+  # ── Internationalisation / Date Formatting ────────────────────────────────
+  intl: ^0.20.2
+
+  # ── Network Connectivity (Hybrid mode prep) ───────────────────────────────
+  connectivity_plus: ^6.1.3
+  path: ^1.9.1
+  flutter_local_notifications: ^22.2.0
+  pdf: ^3.11.1
+  pdfx: ^2.6.0
+  open_filex: ^4.5.0
+  share_plus: ^10.1.0
+  excel: ^4.0.2
+  photo_manager: ^3.12.0
+  image_picker: ^1.2.3
+  camera: ^0.11.0+2
+  syncfusion_flutter_pdf: ^33.2.13
+  image: ^4.3.0
+  wakelock_plus: ^1.3.1
+  syncfusion_flutter_pdfviewer: ^33.2.13
+  syncfusion_flutter_core: ^33.2.15
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Dev Dependencies
+# ─────────────────────────────────────────────────────────────────────────────
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mockito: ^5.4.0
+  mocktail: ^1.0.0
+  integration_test:
+    sdk: flutter
+  # Linting
+  flutter_lints: ^5.0.0
+
+  # Code Generation
+  build_runner: ^2.4.15
+  freezed: ^3.0.0
+  json_serializable: ^6.9.5
+
+  # Launcher Icon Generator
+  flutter_launcher_icons: ^0.14.3
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Flutter Launcher Icons Configuration
+# ─────────────────────────────────────────────────────────────────────────────
+flutter_launcher_icons:
+    android: true
+    ios: false
+    image_path: "assets/icons/app_icon.png"
+    min_sdk_android: 21
+    adaptive_icon_background: "#FFFFFF"
+    adaptive_icon_foreground: "assets/icons/app_icon.png"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Flutter Configuration
+# ─────────────────────────────────────────────────────────────────────────────
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/icons/
+    - assets/images/
+    - assets/animations/
+    - assets/lottie/
+
+  # Fonts loaded at runtime via google_fonts.
+  # Add bundled offline fonts here when required.
+  fonts: []
